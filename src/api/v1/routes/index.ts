@@ -4,7 +4,7 @@ import { Request, Response, Router } from 'express';
 const router: Router = Router();
 
 /** Tests router GET endpoint */
-router.get('/hello/:name', (req: Request, res: Response) => res.send({ message: `Hello ${ req.params.name }!` }));
+router.get('/hello/:name', ({ params: { name } }: Request, res: Response) => res.send({ message: `Hello ${ name }!` }));
 
 /** Exports routes as default */
 export default router;
